@@ -232,9 +232,9 @@ class CartHistory extends StatelessWidget {
                           ))))
               : SizedBox(
                   height: MediaQuery.of(context).size.height / 1.5,
-                  child: Center(
-                    child: const NoDataPage(
-                      text: "Bạn chưa mua bất kỳ món gì!",
+                  child: const Center(
+                    child: NoDataPage(
+                      text: "Bạn chưa mua bé thú cưng nào",
                       imgPath: "assets/image/empty_cart.jpg",
                     ),
                   ));

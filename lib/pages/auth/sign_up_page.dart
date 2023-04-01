@@ -73,12 +73,12 @@ class SignUpPage extends StatelessWidget {
                       //app logo
                       Container(
                         height: Dimensions.screenHeight * 0.25,
-                        child: Center(
+                        child: const Center(
                           child: CircleAvatar(
                             backgroundColor: Colors.white,
                             radius: 50,
                             backgroundImage:
-                                AssetImage("assets/image/logo.jpg"),
+                                AssetImage("assets/image/logo.png"),
                           ),
                         ),
                       ),

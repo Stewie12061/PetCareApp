@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pet_care_app/routes/route_helper.dart';
 import 'package:pet_care_app/utils/dimensions.dart';
@@ -41,10 +40,10 @@ class _SplashScreenState extends State<SplashScreen>
 
     super.initState();
     _loadResource();
-    controller = new AnimationController(
+    controller = AnimationController(
         vsync: this, duration: const Duration(seconds: 2))
       ..forward();
-    animation = new CurvedAnimation(parent: controller, curve: Curves.linear);
+    animation = CurvedAnimation(parent: controller, curve: Curves.linear);
 
     Timer(const Duration(seconds: 3),
         () => Get.offNamed(RouteHelper.getInitial()));
@@ -61,7 +60,7 @@ class _SplashScreenState extends State<SplashScreen>
                 scale: animation,
                 child: Center(
                   child: Image.asset(
-                    "assets/image/logo.jpg",
+                    "assets/image/logo.png",
                     width: Dimensions.splashImg,
                   ),
                 ))

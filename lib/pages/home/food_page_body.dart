@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:pet_care_app/controllers/popular_product_controller.dart';
 import 'package:pet_care_app/controllers/recommended_product_controller.dart';
 import 'package:pet_care_app/models/products_model.dart';
-import 'package:pet_care_app/pages/food/popular_food_detail.dart';
+import 'package:pet_care_app/pages/pet/popular_pet_detail.dart';
 import 'package:pet_care_app/routes/route_helper.dart';
 import 'package:pet_care_app/utils/app_constants.dart';
 import 'package:pet_care_app/utils/colors.dart';
@@ -24,8 +24,8 @@ class FoodPageBody extends StatefulWidget {
 class _FoodPageBodyState extends State<FoodPageBody> {
   PageController pageController = PageController(viewportFraction: 0.85);
   var _currPageValue = 0.0;
-  double _scaleFactor = 0.8;
-  double _height = Dimensions.pageViewContainer;
+  final double _scaleFactor = 0.8;
+  final double _height = Dimensions.pageViewContainer;
   @override
   void initState() {
     super.initState();
@@ -110,7 +110,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               Container(
                 margin: const EdgeInsets.only(bottom: 2),
                 child: SmallText(
-                  text: "Bánh kem bán chạy nhất",
+                  text: "Thú cưng bán chạy nhất",
                   color: Colors.black26,
                 ),
               ),
@@ -123,7 +123,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             builder: (recommendedProducts) {
           return recommendedProducts.isLoaded
               ? ListView.builder(
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   itemCount: recommendedProducts.recommendedProductList.length,
                   itemBuilder: (context, index) {
@@ -276,7 +276,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                 right: Dimensions.width10,
               ),
               decoration: BoxDecoration(
-                color: index.isEven ? Color(0xff69c5df) : Color(0xff9294cc),
+                color: index.isEven ? const Color(0xff69c5df) : const Color(0xff9294cc),
                 borderRadius: BorderRadius.circular(Dimensions.radius30),
                 image: DecorationImage(
                   fit: BoxFit.cover,
@@ -298,7 +298,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(Dimensions.radius20),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Color(0xFFe8e8e8),
                       blurRadius: 5.0,

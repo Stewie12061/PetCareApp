@@ -25,6 +25,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
+        onRefresh: _loadResource,
         child: Column(
           children: [
             //Header
@@ -44,7 +45,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
                     Column(
                       children: [
                         BigText(
-                          text: 'TTCake',
+                          text: 'Pet Care',
                           color: AppColors.mainColor,
                           size: 30,
                         ),
@@ -54,15 +55,15 @@ class _MainFoodPageState extends State<MainFoodPage> {
                       child: Container(
                         width: Dimensions.width45,
                         height: Dimensions.height45,
-                        child: Icon(
-                          Icons.search,
-                          color: Colors.white,
-                          size: Dimensions.iconSize24,
-                        ),
                         decoration: BoxDecoration(
                           color: AppColors.mainColor,
                           borderRadius:
                               BorderRadius.circular(Dimensions.radius15),
+                        ),
+                        child: Icon(
+                          Icons.search,
+                          color: Colors.white,
+                          size: Dimensions.iconSize24,
                         ),
                       ),
                     ),
@@ -71,13 +72,12 @@ class _MainFoodPageState extends State<MainFoodPage> {
               ),
             ),
             //Body
-            Expanded(
+            const Expanded(
               child: SingleChildScrollView(
                 child: FoodPageBody(),
               ),
             ),
           ],
-        ),
-        onRefresh: _loadResource);
+        ));
   }
 }

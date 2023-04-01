@@ -1,5 +1,5 @@
 class AppConstants {
-  static const String APP_NAME = "DBFood";
+  static const String APP_NAME = "DBPet";
   static const int APP_VERSION = 1;
 
 // https://json-o-url.herokuapp.com

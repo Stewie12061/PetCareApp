@@ -205,21 +205,20 @@ class PopularFoodDetail extends StatelessWidget {
                         top: Dimensions.height15,
                         bottom: Dimensions.height15,
                       ),
+                      decoration: BoxDecoration(
+                        color: AppColors.mainColor,
+                        borderRadius:
+                            BorderRadius.circular(Dimensions.radius20),
+                      ),
                       child: GestureDetector(
                         onTap: () {
                           popularProduct.addItem(product);
                         },
                         child: BigText(
-                          text: NumberFormat.currency(locale: 'vi')
-                                  .format(product.price) +
-                              " | Mua",
+                          text: "${NumberFormat.currency(locale: 'vi')
+                                  .format(product.price)} | Mua",
                           color: Colors.white,
                         ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: AppColors.mainColor,
-                        borderRadius:
-                            BorderRadius.circular(Dimensions.radius20),
                       ),
                     ),
                   ),
